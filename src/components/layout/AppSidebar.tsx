@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import { 
   LayoutDashboard, 
   History, 
@@ -7,12 +7,14 @@ import {
   ChevronLeft, 
   Menu,
   Zap,
-  X
+  X,
+  Home
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
+  { title: "Home", url: "/", icon: Home },
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Call History", url: "/history", icon: History },
   { title: "Settings", url: "/settings", icon: Settings },
@@ -27,9 +29,13 @@ export function AppSidebar() {
 
   const SidebarContent = () => (
     <>
-      {/* Logo */}
-      <div className="flex items-center gap-3 px-4 py-6 border-b border-sidebar-border">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
+      {/* Logo - Clickable to go home */}
+      <Link 
+        to="/" 
+        className="flex items-center gap-3 px-4 py-6 border-b border-sidebar-border hover:bg-sidebar-accent/50 transition-colors duration-200 group"
+        onClick={() => setMobileOpen(false)}
+      >
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-200">
           <Zap className="w-5 h-5 text-primary-foreground" />
         </div>
         {!collapsed && (
@@ -38,7 +44,7 @@ export function AppSidebar() {
             <span className="text-xs text-muted-foreground">by Palette Space</span>
           </div>
         )}
-      </div>
+      </Link>
 
       {/* Navigation */}
       <nav className="flex-1 px-3 py-4 space-y-1">
