@@ -7,24 +7,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 13% 13%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 13%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 13%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 168 76% 36%;
+    --primary: 189 94% 43%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 13% 13%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 168 76% 36%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -36,33 +36,40 @@
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 0%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 168 76% 36%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 189 94% 43%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --teal: 168 76% 36%;
-    --teal-light: 168 76% 45%;
-    --gray-dark: 220 13% 13%;
-    --gray-medium: 220 9% 46%;
-    --gray-light: 220 14% 96%;
+    /* Custom tokens - Hyperbound style */
+    --heading: 222 47% 11%;
+    --body: 215 25% 35%;
+    --menu-header: 215 16% 62%;
     
-    /* Gradients for light mode */
-    --gradient-primary: linear-gradient(135deg, hsl(168 76% 36%), hsl(168 76% 45%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(168 76% 98%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    /* Gradient colors */
+    --cyan: 189 94% 43%;
+    --blue: 217 91% 60%;
+    
+    /* Section backgrounds */
+    --section-light: 210 40% 98%;
+    --section-dark: 0 0% 0%;
 
-    /* Sidebar - also light mode */
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(189 94% 43%), hsl(217 91% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(189 94% 98%) 100%);
+    --gradient-problem: linear-gradient(135deg, hsl(189 94% 43%), hsl(217 91% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+
+    /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 13% 13%;
-    --sidebar-primary: 168 76% 36%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 189 94% 43%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 13% 13%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 168 76% 36%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 189 94% 43%;
   }
 }
 
@@ -76,7 +83,7 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Custom scrollbar - light mode */
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -113,6 +120,14 @@
     background-image: var(--gradient-primary);
   }
 
+  .gradient-primary-bg {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-problem-bg {
+    background: var(--gradient-problem);
+  }
+
   .gradient-border {
     position: relative;
   }
@@ -128,6 +143,26 @@
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  .text-heading {
+    color: hsl(var(--heading));
+  }
+
+  .text-body {
+    color: hsl(var(--body));
+  }
+
+  .text-menu-header {
+    color: hsl(var(--menu-header));
+  }
+
+  .bg-section-light {
+    background-color: hsl(var(--section-light));
+  }
+
+  .bg-section-dark {
+    background-color: hsl(var(--section-dark));
   }
 
   .animate-float {

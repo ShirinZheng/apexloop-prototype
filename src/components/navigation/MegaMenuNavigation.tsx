@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { 
   Zap, 
-  ChevronDown,
   Bot,
   BarChart3,
   MessageSquare,
@@ -33,7 +32,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 // Solutions Menu Data
@@ -97,10 +95,10 @@ export default function MegaMenuNavigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg gradient-primary-bg flex items-center justify-center">
               <Zap className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-bold text-xl text-foreground">ApexLoop</span>
+            <span className="font-bold text-xl text-heading">ApexLoop</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -109,25 +107,25 @@ export default function MegaMenuNavigation() {
               <NavigationMenuList>
                 {/* Solutions Mega Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground hover:text-primary bg-transparent">
+                  <NavigationMenuTrigger className="text-body hover:text-heading bg-transparent font-medium">
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[900px] p-6">
-                      <div className="grid grid-cols-4 gap-6">
+                    <div className="w-[950px] p-8">
+                      <div className="grid grid-cols-4 gap-12">
                         {/* Column 1: Product */}
                         <div>
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Product</h4>
-                          <ul className="space-y-2">
+                          <h4 className="text-xs font-bold uppercase tracking-widest text-menu-header mb-4">Product</h4>
+                          <ul className="space-y-1">
                             {productItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
                                   <Link
                                     to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-2 p-2 rounded-md hover:bg-muted transition-colors group"
+                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
                                   >
-                                    <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
-                                    <span className="text-sm font-medium text-foreground group-hover:text-primary">{item.title}</span>
+                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
                                   </Link>
                                 </NavigationMenuLink>
                               </li>
@@ -137,17 +135,17 @@ export default function MegaMenuNavigation() {
 
                         {/* Column 2: Use Cases */}
                         <div>
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Use Cases</h4>
-                          <ul className="space-y-2">
+                          <h4 className="text-xs font-bold uppercase tracking-widest text-menu-header mb-4">Use Cases</h4>
+                          <ul className="space-y-1">
                             {useCaseItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
                                   <Link
                                     to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-2 p-2 rounded-md hover:bg-muted transition-colors group"
+                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
                                   >
-                                    <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
-                                    <span className="text-sm font-medium text-foreground group-hover:text-primary">{item.title}</span>
+                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
                                   </Link>
                                 </NavigationMenuLink>
                               </li>
@@ -157,17 +155,17 @@ export default function MegaMenuNavigation() {
 
                         {/* Column 3: Industries */}
                         <div>
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Industries</h4>
-                          <ul className="space-y-2">
+                          <h4 className="text-xs font-bold uppercase tracking-widest text-menu-header mb-4">Industries</h4>
+                          <ul className="space-y-1">
                             {industryItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
                                   <Link
                                     to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-2 p-2 rounded-md hover:bg-muted transition-colors group"
+                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
                                   >
-                                    <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
-                                    <span className="text-sm font-medium text-foreground group-hover:text-primary">{item.title}</span>
+                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
                                   </Link>
                                 </NavigationMenuLink>
                               </li>
@@ -176,16 +174,17 @@ export default function MegaMenuNavigation() {
                         </div>
 
                         {/* Column 4: Featured Card */}
-                        <div className="bg-muted rounded-xl p-5">
-                          <h4 className="text-sm font-semibold text-foreground mb-2">Practice Recommendations</h4>
-                          <p className="text-xs text-muted-foreground mb-4">
+                        <div className="bg-accent/10 rounded-xl p-5">
+                          <h4 className="text-sm font-semibold text-heading mb-2">Practice Recommendations</h4>
+                          <p className="text-xs text-body mb-4">
                             Get personalized practice scenarios based on your performance data.
                           </p>
-                          <div className="bg-background rounded-lg h-24 mb-4 flex items-center justify-center border border-border">
-                            <Bot className="w-10 h-10 text-primary/50" />
+                          <div className="bg-background rounded-lg h-24 mb-4 flex items-center justify-center border border-border overflow-hidden">
+                            <div className="w-full h-full gradient-primary-bg opacity-20" />
+                            <Bot className="w-10 h-10 text-accent absolute" />
                           </div>
                           <Link to="/dashboard">
-                            <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                            <Button size="sm" className="w-full gradient-primary-bg hover:opacity-90 text-primary-foreground border-0">
                               Try it now
                               <ArrowRight className="w-3 h-3 ml-1" />
                             </Button>
@@ -198,37 +197,37 @@ export default function MegaMenuNavigation() {
 
                 {/* Simple Links */}
                 <NavigationMenuItem>
-                  <Link to="/pricing" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  <Link to="/pricing" className="px-4 py-2 text-sm font-medium text-body hover:text-accent transition-colors">
                     Pricing
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/success-stories" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  <Link to="/success-stories" className="px-4 py-2 text-sm font-medium text-body hover:text-accent transition-colors">
                     Success Stories
                   </Link>
                 </NavigationMenuItem>
 
                 {/* Resources Mega Menu */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground hover:text-primary bg-transparent">
+                  <NavigationMenuTrigger className="text-body hover:text-heading bg-transparent font-medium">
                     Resources
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[700px] p-6">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="w-[750px] p-8">
+                      <div className="grid grid-cols-2 gap-6">
                         {resourceItems.map((item) => (
                           <NavigationMenuLink key={item.slug} asChild>
                             <Link
                               to={`/resources/${item.slug}`}
                               className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted transition-colors group"
                             >
-                              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                <item.icon className="w-5 h-5 text-primary" />
+                              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                                <item.icon className="w-6 h-6 text-accent" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-semibold text-foreground group-hover:text-primary mb-1">{item.title}</h4>
-                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                                <h4 className="text-sm font-semibold text-heading group-hover:text-accent mb-1">{item.title}</h4>
+                                <p className="text-xs text-body">{item.description}</p>
                               </div>
                             </Link>
                           </NavigationMenuLink>
@@ -239,13 +238,13 @@ export default function MegaMenuNavigation() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/enterprise" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  <Link to="/enterprise" className="px-4 py-2 text-sm font-medium text-body hover:text-accent transition-colors">
                     Enterprise
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/careers" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  <Link to="/careers" className="px-4 py-2 text-sm font-medium text-body hover:text-accent transition-colors">
                     Careers
                   </Link>
                 </NavigationMenuItem>
@@ -256,17 +255,17 @@ export default function MegaMenuNavigation() {
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-2">
             <Link to="/dashboard">
-              <Button variant="ghost" size="sm" className="text-foreground hover:text-primary">
+              <Button variant="ghost" size="sm" className="text-body hover:text-heading">
                 Book a demo
               </Button>
             </Link>
             <Link to="/dashboard">
-              <Button variant="ghost" size="sm" className="text-foreground hover:text-primary">
+              <Button variant="ghost" size="sm" className="text-body hover:text-heading">
                 Log in
               </Button>
             </Link>
             <Link to="/dashboard">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button size="sm" className="gradient-primary-bg hover:opacity-90 text-primary-foreground border-0">
                 Try it now
               </Button>
             </Link>
@@ -278,9 +277,9 @@ export default function MegaMenuNavigation() {
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-heading" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-heading" />
             )}
           </button>
         </div>
@@ -291,12 +290,12 @@ export default function MegaMenuNavigation() {
         <div className="lg:hidden border-t border-border bg-background">
           <div className="px-4 py-6 space-y-4">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase text-muted-foreground">Solutions</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-menu-header">Solutions</p>
               {productItems.slice(0, 3).map((item) => (
                 <Link
                   key={item.slug}
                   to={`/solutions/${item.slug}`}
-                  className="block py-2 text-sm text-foreground hover:text-primary"
+                  className="block py-2 text-sm text-body hover:text-accent"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.title}
@@ -304,25 +303,25 @@ export default function MegaMenuNavigation() {
               ))}
             </div>
             <div className="space-y-2">
-              <Link to="/pricing" className="block py-2 text-sm font-medium text-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
+              <Link to="/pricing" className="block py-2 text-sm font-medium text-body hover:text-accent" onClick={() => setMobileOpen(false)}>
                 Pricing
               </Link>
-              <Link to="/success-stories" className="block py-2 text-sm font-medium text-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
+              <Link to="/success-stories" className="block py-2 text-sm font-medium text-body hover:text-accent" onClick={() => setMobileOpen(false)}>
                 Success Stories
               </Link>
-              <Link to="/enterprise" className="block py-2 text-sm font-medium text-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
+              <Link to="/enterprise" className="block py-2 text-sm font-medium text-body hover:text-accent" onClick={() => setMobileOpen(false)}>
                 Enterprise
               </Link>
-              <Link to="/careers" className="block py-2 text-sm font-medium text-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
+              <Link to="/careers" className="block py-2 text-sm font-medium text-body hover:text-accent" onClick={() => setMobileOpen(false)}>
                 Careers
               </Link>
             </div>
             <div className="pt-4 border-t border-border space-y-2">
               <Link to="/dashboard" onClick={() => setMobileOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start">Log in</Button>
+                <Button variant="ghost" className="w-full justify-start text-body">Log in</Button>
               </Link>
               <Link to="/dashboard" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full bg-primary text-primary-foreground">Try it now</Button>
+                <Button className="w-full gradient-primary-bg text-primary-foreground">Try it now</Button>
               </Link>
             </div>
           </div>
