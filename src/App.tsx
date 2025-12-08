@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import CallHistory from "./pages/CallHistory";
 import ScoringReport from "./pages/ScoringReport";
 import Settings from "./pages/Settings";
+import FeaturePage from "./pages/FeaturePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,13 @@ const App = () => (
           <Route path="/history" element={<CallHistory />} />
           <Route path="/report/:id" element={<ScoringReport />} />
           <Route path="/settings" element={<Settings />} />
+          {/* Dynamic feature pages */}
+          <Route path="/solutions/:slug" element={<FeaturePage />} />
+          <Route path="/resources/:slug" element={<FeaturePage />} />
+          <Route path="/pricing" element={<FeaturePage />} />
+          <Route path="/success-stories" element={<FeaturePage />} />
+          <Route path="/enterprise" element={<FeaturePage />} />
+          <Route path="/careers" element={<FeaturePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
