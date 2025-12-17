@@ -36,8 +36,8 @@ import { useState } from "react";
 
 // Solutions Menu Data
 const productItems = [
-  { title: "AI Sales Roleplays", slug: "ai-sales-roleplays", icon: Bot, description: "Practice with AI buyers" },
-  { title: "AI Real Call Scoring", slug: "ai-real-call-scoring", icon: BarChart3, description: "Score your actual calls" },
+  { title: "AI Sales Roleplays", slug: "ai-sales-roleplays", icon: Bot, description: "Practice with AI buyers", externalUrl: "https://app.apexloopai.com/dashboard" },
+  { title: "AI Real Call Scoring", slug: "ai-real-call-scoring", icon: BarChart3, description: "Score your actual calls", externalUrl: "https://app.apexloopai.com/dashboard/history" },
   { title: "AI Coaching", slug: "ai-coaching", icon: MessageSquare, description: "Personalized AI coaching" },
   { title: "AI Post-Sales Roleplays", slug: "ai-post-sales-roleplays", icon: HeadphonesIcon, description: "Customer success training" },
   { title: "AI Roleplay Hiring Assessments", slug: "ai-roleplay-hiring-assessments", icon: ClipboardCheck, description: "Evaluate candidates" },
@@ -120,13 +120,23 @@ export default function MegaMenuNavigation() {
                             {productItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
-                                  <Link
-                                    to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
-                                  >
-                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
-                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
-                                  </Link>
+                                  {item.externalUrl ? (
+                                    <a
+                                      href={item.externalUrl}
+                                      className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
+                                    >
+                                      <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                      <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      to={`/solutions/${item.slug}`}
+                                      className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
+                                    >
+                                      <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                      <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
+                                    </Link>
+                                  )}
                                 </NavigationMenuLink>
                               </li>
                             ))}
