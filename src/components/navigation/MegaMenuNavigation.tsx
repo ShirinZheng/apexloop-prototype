@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { 
-  Zap, 
+import {
+  Zap,
   Bot,
   BarChart3,
   MessageSquare,
@@ -60,29 +60,29 @@ const industryItems = [
 
 // Resources Menu Data
 const resourceItems = [
-  { 
-    title: "Demos", 
-    slug: "demos", 
-    icon: PlayCircle, 
-    description: "Watch how ApexLoop's state of the art AI roleplays work" 
+  {
+    title: "Demos",
+    slug: "demos",
+    icon: PlayCircle,
+    description: "Watch how ApexLoop's state of the art AI roleplays work"
   },
-  { 
-    title: "Blog", 
-    slug: "blog", 
-    icon: BookOpen, 
-    description: "Stay up to date with the latest in AI coaching" 
+  {
+    title: "Blog",
+    slug: "blog",
+    icon: BookOpen,
+    description: "Stay up to date with the latest in AI coaching"
   },
-  { 
-    title: "Competitions", 
-    slug: "competitions", 
-    icon: Trophy, 
-    description: "Join our quarterly virtual competitions" 
+  {
+    title: "Competitions",
+    slug: "competitions",
+    icon: Trophy,
+    description: "Join our quarterly virtual competitions"
   },
-  { 
-    title: "Partners", 
-    slug: "partners", 
-    icon: Handshake, 
-    description: "Want to become a partner? Join us!" 
+  {
+    title: "Partners",
+    slug: "partners",
+    icon: Handshake,
+    description: "Want to become a partner? Join us!"
   },
 ];
 
@@ -183,12 +183,12 @@ export default function MegaMenuNavigation() {
                             <div className="w-full h-full gradient-primary-bg opacity-20" />
                             <Bot className="w-10 h-10 text-accent absolute" />
                           </div>
-                          <Link to="/dashboard">
+                          <a href="https://app.apexloopai.com/dashboard">
                             <Button size="sm" className="w-full gradient-primary-bg hover:opacity-90 text-primary-foreground border-0">
                               Try it now
                               <ArrowRight className="w-3 h-3 ml-1" />
                             </Button>
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -254,21 +254,21 @@ export default function MegaMenuNavigation() {
 
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-2">
-            <Link to="/dashboard">
+            <a href="https://app.apexloopai.com/dashboard">
               <Button variant="ghost" size="sm" className="text-body hover:text-heading">
                 Book a demo
               </Button>
-            </Link>
-            <Link to="/dashboard">
+            </a>
+            <a href="https://app.apexloopai.com/login">
               <Button variant="ghost" size="sm" className="text-body hover:text-heading">
                 Log in
               </Button>
-            </Link>
-            <Link to="/dashboard">
+            </a>
+            <a href="https://app.apexloopai.com/dashboard">
               <Button size="sm" className="gradient-primary-bg hover:opacity-90 text-primary-foreground border-0">
                 Try it now
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -317,12 +317,12 @@ export default function MegaMenuNavigation() {
               </Link>
             </div>
             <div className="pt-4 border-t border-border space-y-2">
-              <Link to="/dashboard" onClick={() => setMobileOpen(false)}>
+              <a href="https://app.apexloopai.com/login" onClick={() => setMobileOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start text-body">Log in</Button>
-              </Link>
-              <Link to="/dashboard" onClick={() => setMobileOpen(false)}>
+              </a>
+              <a href="https://app.apexloopai.com/dashboard" onClick={() => setMobileOpen(false)}>
                 <Button className="w-full gradient-primary-bg text-primary-foreground">Try it now</Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

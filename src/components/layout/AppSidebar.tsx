@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { NavLink, useLocation, Link } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  History, 
-  Settings, 
-  ChevronLeft, 
+import {
+  LayoutDashboard,
+  History,
+  Settings,
+  ChevronLeft,
   Menu,
   Zap,
   X,
@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { title: "Home", url: "/", icon: Home },
-  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
+  { title: "Dashboard", url: "https://app.apexloopai.com/dashboard", icon: LayoutDashboard },
   { title: "Call History", url: "/history", icon: History },
   { title: "Settings", url: "/settings", icon: Settings },
 ];
@@ -30,8 +30,8 @@ export function AppSidebar() {
   const SidebarContent = () => (
     <>
       {/* Logo - Clickable to go home */}
-      <Link 
-        to="/" 
+      <Link
+        to="/"
         className="flex items-center gap-3 px-4 py-6 border-b border-sidebar-border hover:bg-sidebar-accent/50 transition-colors duration-200 group"
         onClick={() => setMobileOpen(false)}
       >
@@ -60,11 +60,11 @@ export function AppSidebar() {
                 : "text-muted-foreground hover:bg-secondary hover:text-foreground"
             )}
           >
-            <item.icon 
+            <item.icon
               className={cn(
                 "w-5 h-5 transition-transform duration-200 group-hover:scale-110",
                 isActive(item.url) && "text-primary"
-              )} 
+              )}
             />
             {!collapsed && (
               <span className="font-medium">{item.title}</span>
@@ -84,11 +84,11 @@ export function AppSidebar() {
           onClick={() => setCollapsed(!collapsed)}
           className="w-full justify-center"
         >
-          <ChevronLeft 
+          <ChevronLeft
             className={cn(
               "w-4 h-4 transition-transform duration-200",
               collapsed && "rotate-180"
-            )} 
+            )}
           />
           {!collapsed && <span className="ml-2">Collapse</span>}
         </Button>

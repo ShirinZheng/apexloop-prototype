@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Bot, 
-  BarChart3, 
-  Users, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Bot,
+  BarChart3,
+  Users,
   Zap,
   PlayCircle
 } from "lucide-react";
@@ -175,22 +175,22 @@ export default function FeaturePage() {
             <Zap className="w-4 h-4" />
             <span className="text-sm font-medium">ApexLoop Solutions</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             {data.title}
           </h1>
-          
+
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {data.subtitle}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/dashboard">
+            <a href="https://app.apexloopai.com/dashboard">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Try it now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </Link>
+            </a>
             <Button variant="outline" size="lg">
               <PlayCircle className="w-4 h-4 mr-2" />
               Watch demo
@@ -219,7 +219,7 @@ export default function FeaturePage() {
                 ))}
               </ul>
             </div>
-            
+
             {/* Feature Visual */}
             <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
@@ -272,12 +272,12 @@ export default function FeaturePage() {
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
               Join hundreds of sales teams already using ApexLoop to improve their performance.
             </p>
-            <Link to="/dashboard">
+            <a href="https://app.apexloopai.com/dashboard">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Start Free Trial
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

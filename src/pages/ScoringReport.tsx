@@ -115,8 +115,8 @@ export default function ScoringReport() {
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  {new Date(report.date).toLocaleDateString('en-US', { 
-                    month: 'long', 
+                  {new Date(report.date).toLocaleDateString('en-US', {
+                    month: 'long',
                     day: 'numeric',
                     year: 'numeric'
                   })}
@@ -144,11 +144,11 @@ export default function ScoringReport() {
             <h2 className="text-lg font-semibold text-foreground mb-6">Overall Score</h2>
             <CircularProgress value={report.overallScore} />
             <p className="text-muted-foreground mt-4 text-center max-w-xs">
-              {report.overallScore >= 80 
-                ? "Excellent performance! Keep up the great work." 
-                : report.overallScore >= 50 
-                ? "Good effort. Review the feedback to improve." 
-                : "Needs improvement. Focus on the weak areas identified."}
+              {report.overallScore >= 80
+                ? "Excellent performance! Keep up the great work."
+                : report.overallScore >= 50
+                  ? "Good effort. Review the feedback to improve."
+                  : "Needs improvement. Focus on the weak areas identified."}
             </p>
           </div>
 
@@ -171,8 +171,8 @@ export default function ScoringReport() {
             </div>
             <ul className="space-y-4">
               {report.strengths.map((strength, index) => (
-                <li 
-                  key={index} 
+                <li
+                  key={index}
                   className="flex items-start gap-3 text-sm text-muted-foreground animate-fade-in opacity-0"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -193,8 +193,8 @@ export default function ScoringReport() {
             </div>
             <ul className="space-y-4">
               {report.weaknesses.map((weakness, index) => (
-                <li 
-                  key={index} 
+                <li
+                  key={index}
                   className="flex items-start gap-3 text-sm text-muted-foreground animate-fade-in opacity-0"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -213,11 +213,11 @@ export default function ScoringReport() {
               View All Calls
             </Button>
           </Link>
-          <Link to="/dashboard">
+          <a href="https://app.apexloopai.com/dashboard">
             <Button variant="hero" size="lg">
               Practice Again
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </AppLayout>

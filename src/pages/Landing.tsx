@@ -141,12 +141,12 @@ export default function Landing() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/dashboard">
+            <a href="https://app.apexloopai.com/dashboard">
               <Button size="lg" className="gradient-primary-bg hover:opacity-90 text-primary-foreground px-8 border-0">
                 Try it now
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-            </Link>
+            </a>
             <Button variant="outline" size="lg" className="border-border text-heading hover:bg-muted">
               <PlayCircle className="w-5 h-5 mr-2" />
               Watch Demo
@@ -255,12 +255,12 @@ export default function Landing() {
                   </li>
                 ))}
               </ul>
-              <Link to="/dashboard">
+              <a href="https://app.apexloopai.com/dashboard">
                 <Button size="lg" className="gradient-primary-bg hover:opacity-90 text-primary-foreground border-0">
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-              </Link>
+              </a>
             </div>
             
             {/* Dashboard Preview */}
@@ -385,12 +385,12 @@ export default function Landing() {
               Join hundreds of high-performing sales teams already using ApexLoop 
               to crush their quotas.
             </p>
-            <Link to="/dashboard">
+            <a href="https://app.apexloopai.com/dashboard">
               <Button size="lg" className="gradient-primary-bg hover:opacity-90 text-primary-foreground px-8 border-0">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
