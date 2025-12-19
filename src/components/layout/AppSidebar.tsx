@@ -35,9 +35,7 @@ export function AppSidebar() {
         className="flex items-center gap-3 px-4 py-6 border-b border-sidebar-border hover:bg-sidebar-accent/50 transition-colors duration-200 group"
         onClick={() => setMobileOpen(false)}
       >
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-200">
-          <Zap className="w-5 h-5 text-primary-foreground" />
-        </div>
+        <img src="/logo-s.png" alt="ApexLoop Logo" className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-105" />
         {!collapsed && (
           <div className="flex flex-col">
             <span className="font-bold text-lg text-foreground">ApexLoop</span>

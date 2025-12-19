@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { 
-  Zap, 
-  Bot, 
-  BarChart3, 
-  Target, 
-  ArrowRight, 
+import {
+  Zap,
+  Bot,
+  BarChart3,
+  Target,
+  ArrowRight,
   CheckCircle2,
   PlayCircle,
   Clock,
@@ -122,24 +122,24 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-cyan/5 to-transparent pointer-events-none" />
-        
+
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-8">
             <Zap className="w-4 h-4" />
             <span className="text-sm font-medium">The Future of Sales Training</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heading mb-6 leading-tight">
             Master Sales with
             <br />
             <span className="gradient-text">AI-Powered Roleplay</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-body max-w-2xl mx-auto mb-10">
-            Practice unlimited sales calls with intelligent AI buyers. Get instant scoring, 
+            Practice unlimited sales calls with intelligent AI buyers. Get instant scoring,
             personalized feedback, and watch your close rates soar.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://app.apexloopai.com/dashboard">
               <Button size="lg" className="gradient-primary-bg hover:opacity-90 text-primary-foreground px-8 border-0">
@@ -190,7 +190,7 @@ export default function Landing() {
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-16">
             Traditional training methods can't keep up with today's fast-paced sales environment.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {problemStats.map((item) => (
               <div key={item.title} className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
@@ -213,7 +213,7 @@ export default function Landing() {
               Everything You Need to <span className="gradient-text">Close More Deals</span>
             </h2>
             <p className="text-body max-w-2xl mx-auto">
-              Our AI platform simulates real sales conversations, scores your performance, 
+              Our AI platform simulates real sales conversations, scores your performance,
               and provides actionable insights to accelerate your growth.
             </p>
           </div>
@@ -244,7 +244,7 @@ export default function Landing() {
                 Analyze Thousands of Calls & Upskill with AI Coaching
               </h2>
               <p className="text-primary-foreground/70 mb-8 leading-relaxed">
-                Our AI doesn't just score calls—it learns from your top performers and creates 
+                Our AI doesn't just score calls—it learns from your top performers and creates
                 personalized coaching plans for every rep. Scale excellence across your entire team.
               </p>
               <ul className="space-y-4 mb-8">
@@ -262,7 +262,7 @@ export default function Landing() {
                 </Button>
               </a>
             </div>
-            
+
             {/* Dashboard Preview */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 shadow-2xl">
               <div className="flex items-center gap-2 mb-4">
@@ -320,7 +320,7 @@ export default function Landing() {
                 <div>
                   <Quote className="w-10 h-10 text-accent/30 mb-4" />
                   <blockquote className="text-xl md:text-2xl font-medium text-heading mb-6 leading-relaxed">
-                    "With ApexLoop, our reps aren't practicing, they're <span className="gradient-text">perfecting</span>. 
+                    "With ApexLoop, our reps aren't practicing, they're <span className="gradient-text">perfecting</span>.
                     We've seen a 40% improvement in close rates within 90 days."
                   </blockquote>
                   <div>
@@ -348,7 +348,7 @@ export default function Landing() {
 
           <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-background border border-border rounded-xl overflow-hidden"
               >
@@ -382,7 +382,7 @@ export default function Landing() {
               Ready to Transform Your Sales Team?
             </h2>
             <p className="text-body mb-8 max-w-lg mx-auto">
-              Join hundreds of high-performing sales teams already using ApexLoop 
+              Join hundreds of high-performing sales teams already using ApexLoop
               to crush their quotas.
             </p>
             <a href="https://app.apexloopai.com/dashboard">
@@ -402,9 +402,7 @@ export default function Landing() {
             {/* Logo Column */}
             <div className="col-span-2 md:col-span-1">
               <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg gradient-primary-bg flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-primary-foreground" />
-                </div>
+                <img src="/logo-s.png" alt="ApexLoop Logo" className="w-8 h-8 object-contain brightness-0 invert" />
                 <span className="font-bold text-xl text-primary-foreground">ApexLoop</span>
               </Link>
               <p className="text-sm text-primary-foreground/60">
