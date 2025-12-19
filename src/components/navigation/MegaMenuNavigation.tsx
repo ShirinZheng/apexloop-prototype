@@ -21,7 +21,8 @@ import {
   Handshake,
   ArrowRight,
   Menu,
-  X
+  X,
+  Lock
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -38,24 +39,24 @@ import { useState } from "react";
 const productItems = [
   { title: "AI Sales Roleplays", slug: "ai-sales-roleplays", icon: Bot, description: "Practice with AI buyers", externalUrl: "https://app.apexloopai.com/dashboard" },
   { title: "AI Real Call Scoring", slug: "ai-real-call-scoring", icon: BarChart3, description: "Score your actual calls", externalUrl: "https://app.apexloopai.com/dashboard/history" },
-  { title: "AI Coaching", slug: "ai-coaching", icon: MessageSquare, description: "Personalized AI coaching" },
-  { title: "AI Post-Sales Roleplays", slug: "ai-post-sales-roleplays", icon: HeadphonesIcon, description: "Customer success training" },
-  { title: "AI Roleplay Hiring Assessments", slug: "ai-roleplay-hiring-assessments", icon: ClipboardCheck, description: "Evaluate candidates" },
+  { title: "AI Coaching", slug: "ai-coaching", icon: MessageSquare, description: "Personalized AI coaching", disabled: true },
+  { title: "AI Post-Sales Roleplays", slug: "ai-post-sales-roleplays", icon: HeadphonesIcon, description: "Customer success training", disabled: true },
+  { title: "AI Roleplay Hiring Assessments", slug: "ai-roleplay-hiring-assessments", icon: ClipboardCheck, description: "Evaluate candidates", disabled: true },
 ];
 
 const useCaseItems = [
-  { title: "Onboarding & Certifications", slug: "onboarding-certifications", icon: GraduationCap },
-  { title: "Change Management", slug: "change-management", icon: RefreshCcw },
-  { title: "Pre-Call Prep", slug: "pre-call-prep", icon: Phone },
-  { title: "QA & Deal Assessment", slug: "qa-deal-assessment", icon: Search },
-  { title: "Hiring", slug: "hiring", icon: Users },
+  { title: "Onboarding & Certifications", slug: "onboarding-certifications", icon: GraduationCap, disabled: true },
+  { title: "Change Management", slug: "change-management", icon: RefreshCcw, disabled: true },
+  { title: "Pre-Call Prep", slug: "pre-call-prep", icon: Phone, disabled: true },
+  { title: "QA & Deal Assessment", slug: "qa-deal-assessment", icon: Search, disabled: true },
+  { title: "Hiring", slug: "hiring", icon: Users, disabled: true },
 ];
 
 const industryItems = [
-  { title: "B2B SaaS Software", slug: "b2b-saas-software", icon: Monitor },
-  { title: "B2B Sales Trainers & Agencies", slug: "b2b-sales-trainers-agencies", icon: School },
-  { title: "B2B Call Centers", slug: "b2b-call-centers", icon: Headphones },
-  { title: "Banking & Financial Advisors", slug: "banking-financial-advisors", icon: Building2 },
+  { title: "B2B SaaS Software", slug: "b2b-saas-software", icon: Monitor, disabled: true },
+  { title: "B2B Sales Trainers & Agencies", slug: "b2b-sales-trainers-agencies", icon: School, disabled: true },
+  { title: "B2B Call Centers", slug: "b2b-call-centers", icon: Headphones, disabled: true },
+  { title: "Banking & Financial Advisors", slug: "banking-financial-advisors", icon: Building2, disabled: true },
 ];
 
 // Resources Menu Data
@@ -118,7 +119,13 @@ export default function MegaMenuNavigation() {
                             {productItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
-                                  {item.externalUrl ? (
+                                  {item.disabled ? (
+                                    <div className="flex items-center gap-3 py-2 rounded-md opacity-60 cursor-not-allowed select-none group">
+                                      <item.icon className="w-4 h-4 text-gray-400" />
+                                      <span className="text-sm font-medium text-gray-400">{item.title}</span>
+                                      <Lock className="w-3 h-3 text-gray-400 ml-auto" />
+                                    </div>
+                                  ) : item.externalUrl ? (
                                     <a
                                       href={item.externalUrl}
                                       className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
@@ -148,13 +155,21 @@ export default function MegaMenuNavigation() {
                             {useCaseItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
-                                  <Link
-                                    to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
-                                  >
-                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
-                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
-                                  </Link>
+                                  {item.disabled ? (
+                                    <div className="flex items-center gap-3 py-2 rounded-md opacity-60 cursor-not-allowed select-none group">
+                                      <item.icon className="w-4 h-4 text-gray-400" />
+                                      <span className="text-sm font-medium text-gray-400">{item.title}</span>
+                                      <Lock className="w-3 h-3 text-gray-400 ml-auto" />
+                                    </div>
+                                  ) : (
+                                    <Link
+                                      to={`/solutions/${item.slug}`}
+                                      className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
+                                    >
+                                      <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                      <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
+                                    </Link>
+                                  )}
                                 </NavigationMenuLink>
                               </li>
                             ))}
@@ -168,13 +183,21 @@ export default function MegaMenuNavigation() {
                             {industryItems.map((item) => (
                               <li key={item.slug}>
                                 <NavigationMenuLink asChild>
-                                  <Link
-                                    to={`/solutions/${item.slug}`}
-                                    className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
-                                  >
-                                    <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
-                                    <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
-                                  </Link>
+                                  {item.disabled ? (
+                                    <div className="flex items-center gap-3 py-2 rounded-md opacity-60 cursor-not-allowed select-none group">
+                                      <item.icon className="w-4 h-4 text-gray-400" />
+                                      <span className="text-sm font-medium text-gray-400">{item.title}</span>
+                                      <Lock className="w-3 h-3 text-gray-400 ml-auto" />
+                                    </div>
+                                  ) : (
+                                    <Link
+                                      to={`/solutions/${item.slug}`}
+                                      className="flex items-center gap-3 py-2 rounded-md hover:bg-muted transition-colors group"
+                                    >
+                                      <item.icon className="w-4 h-4 text-menu-header group-hover:text-accent" />
+                                      <span className="text-sm font-medium text-body group-hover:text-accent">{item.title}</span>
+                                    </Link>
+                                  )}
                                 </NavigationMenuLink>
                               </li>
                             ))}
